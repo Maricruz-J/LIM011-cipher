@@ -1,0 +1,13 @@
+body{
+    display: grid;
+}
+
+.content-informant{
+    grid-column: 3/12;
+    grid-row: 1;
+}
+
+.content-pay-order{
+    grid-column: 9/12;
+    grid-row: 1;
+}
