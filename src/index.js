@@ -13,3 +13,7 @@ const offsetDenounced = document.getElementById('offset-denounced');
 const btnDecode  = document.getElementById('btn-decode');
 const dataDecode = document.getElementById('data-decode');
 
+btnEncode.addEventListener('click', ()=>{
+    encode(nameInformant.value, contactNumber.value, accountNumber.value,offsetInformant.value);
+})
+
