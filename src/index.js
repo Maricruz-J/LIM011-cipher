@@ -17,3 +17,7 @@ btnEncode.addEventListener('click', ()=>{
     encode(nameInformant.value, contactNumber.value, accountNumber.value,offsetInformant.value);
 })
 
+btnDecode.addEventListener('click',()=>{
+    decode(nameBeneficiary.value, offsetDenounced.value);
+})
+

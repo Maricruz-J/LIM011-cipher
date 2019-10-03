@@ -1,43 +1,71 @@
-let positionAscci;
-let positionAscciEncode;
-let charPositionAscciEncode;
-let newName = '';
+let positionAscii;
+let positionAsciiEncode;
+let charPositionAsciiEncode;
+let newData = '';
 
 const encode = (name, contact, account, offset) => {
 
   for (let i = 0; i < name.length; i++) {
+    positionAscii = name.charCodeAt(i);
 
-
-    positionAscci = name.charCodeAt(i);
-
-    if (positionAscci >= 65 && positionAscci <= 90) {
-      positionAscciEncode = (positionAscci - 65 + parseInt(offset)) % 26 + 65;
-      charPositionAscciEncode = String.fromCharCode(positionAscciEncode);
-      newName += charPositionAscciEncode;
-    } else if (positionAscci >= 97 && positionAscci <= 122) {
-      positionAscciEncode = (positionAscci - 97 + parseInt(offset)) % 26 + 97;
-      charPositionAscciEncode = String.fromCharCode(positionAscciEncode);
-      newName += charPositionAscciEncode;
-    } else if (positionAscci >= 48 && positionAscci <= 57) {
-      positionAscciEncode = (positionAscci - 47 + parseInt(offset)) % 10 + 47;
-      charPositionAscciEncode = String.fromCharCode(positionAscciEncode);
-      newName += charPositionAscciEncode;
-    }else if (positionAscci >= 32 && positionAscci <= 47) {
-      positionAscciEncode = (positionAscci - 32 + parseInt(offset)) % 16 + 32;
-      charPositionAscciEncode = String.fromCharCode(positionAscciEncode);
-      newName += charPositionAscciEncode;
-    }else{
-      console.log(positionAscci);
-      newName += String.fromCharCode(positionAscci);
+    if (positionAscii >= 65 && positionAscii <= 90) {
+      positionAsciiEncode = (positionAscii - 65 + parseInt(offset)) % 26 + 65;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else if (positionAscii >= 97 && positionAscii <= 122) {
+      positionAsciiEncode = (positionAscii - 97 + parseInt(offset)) % 26 + 97;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else if (positionAscii >= 48 && positionAscii <= 57) {
+      positionAsciiEncode = (positionAscii - 47 + parseInt(offset)) % 10 + 47;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else if (positionAscii >= 32 && positionAscii <= 47) {
+      positionAsciiEncode = (positionAscii - 32 + parseInt(offset)) % 16 + 32;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else {
+      console.log(positionAscii);
+      newData += String.fromCharCode(positionAscii);
     }
-      
-      
   }
-  console.log(newName);
+  dataEncode.innerHTML = newData;
 }
 
-const decode = () => {
+const decode = (name, offset) => {
+  console.log(name);
 
+  for (let i = 0; i < name.length; i++) {
+    positionAscii = name.charCodeAt(i);
+    console.log(positionAscii);
+
+    if (positionAscii >= 65 && positionAscii <= 90) {
+      positionAsciiEncode = (positionAscii + 65 - parseInt(offset)) % 26 + 65;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else if (positionAscii >= 97 && positionAscii <= 122) {
+      positionAsciiEncode = (positionAscii + 97 - parseInt(offset)) % 26 + 97;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else if (positionAscii >= 48 && positionAscii <= 57) {
+      positionAsciiEncode = (positionAscii + 47 - parseInt(offset)) % 10 + 47;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else if (positionAscii >= 32 && positionAscii <= 47) {
+      positionAsciiEncode = (positionAscii + 32 - parseInt(offset)) % 16 + 32;
+      charPositionAsciiEncode = String.fromCharCode(positionAsciiEncode);
+      newData += charPositionAsciiEncode;
+    } else {
+      console.log(positionAscii);
+      console.log(newData);
+      
+      newData += String.fromCharCode(positionAscii);
+    }
+  }
+  console.log(dataDecode);
+  console.log(newData);
+
+  dataDecode.innerHTML = newData;
 
 }
 

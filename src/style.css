@@ -3,7 +3,7 @@ body{
 }
 
 .content-informant{
-    grid-column: 3/12;
+    grid-column: 1/12;
     grid-row: 1;
 }
 
