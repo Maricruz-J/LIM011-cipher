@@ -2,50 +2,44 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Caesar Cipher</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Bree+Serif|Maven+Pro|Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="content-informant">
-    <h2>Registro de Datos</h2>
-    <h3>Datos del denunciante</h3>
-    <form>
-      <p>Nombres y apellidos: <input type="text" name="" id="name-informant"> </p>
-      <p>Número de contacto: <input type="text" name="" id="contact-number"> </p>
-      <p>Número de cuenta: <input type="text" name="" id="account-number"> </p>
-      <p>Offset: <input type="text" name="" id="offset-informant"> </p>
-      <p>
-        <h3>Datos del denunciado</h3>
-        <p>Nombre: <input type="text" name="" id="name-denounced"> </p>
-        <p>Delito: <select name="" id="select-crime">
-            <option value="">Selecciona delito...</option>
-            <option value="Secuestro">Secuestro</option>
-            <option value="Robo">Robo</option>
-          </select></p>
-        <p>Ingrese información:</p>
-        <textarea name="" id="data-denounced" cols="50" rows="3"></textarea>
-        <br>
-        <input type="button" id="btn-encode" value="Encriptar">
-        <p>Datos a enviar</p>
-        <textarea name="" id="data-encode" cols="50" rows="5"></textarea>
-    </form>
+    <header>
+        <h1>Cifrado Cesar</h1>
+    </header>
+    <div class="content-informant">
+        <h2>Registro de Datos</h2>
+        <h3>Datos del Denunciante</h3>
+        <form>
+            <p>Nombres y apellidos: <input type="text" name="" id="name-informant"> </p>
+            <p>Número de contacto: <input type="number" name="" id="contact-number"> </p>
+            <p>Número de cuenta: <input type="number" name="" id="account-number"> </p>
+            <p>key: <input type="number" name="" id="offset-informant"> </p>
+            <input type="button" id="btn-encode" value="Encriptar">
+            <p>Datos a enviar</p>
+            <textarea name="" id="data-encode" cols="45" rows="5" readonly></textarea>
+        </form>
+    </div>
 
-  </div>
-  <div class="content-pay-order">
-    <h2>Orden de pago</h2>
-    <form>
-      <p>Beneficiario: <input type="text" name="" id="name-beneficiary"> </p>
-      <p>Offset: <input type="text" name="" id="offset-denounced"> </p>
-      <input type="button" id="btn-decode" value="Desencriptar Datos">
-      <p>Datos obtenidos:</p>
-      <textarea name="" id="data-decode" cols="50" rows="10"></textarea>
-    </form>
-  </div>
+    <div class="content-pay-order">
+        <h2>Orden de pago</h2>
+        <h3>Datos del Beneficiario</h3>
+        <form>
+            <p>Beneficiario: <input type="text" name="" id="name-beneficiary"> </p>
+            <p>key: <input type="number" name="" id="offset-denounced"> </p>
+            <input type="button" id="btn-decode" value="Desencriptar Datos">
+            <p>Datos obtenidos:</p>
+            <textarea name="" id="data-decode" cols="45" rows="10" readonly></textarea>
+        </form>
+    </div>
 
-  <script src="cipher.js"></script>
-  <script src="index.js"></script>
+    <script src="cipher.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
