@@ -12,10 +12,10 @@ const btnDecode = document.getElementById('btn-decode');
 const dataDecode = document.getElementById('data-decode');
 
 btnEncode.addEventListener('click', () => {
-    encode(nameInformant.value, contactNumber.value, accountNumber.value, offsetInformant.value);
+    let dataInformant = nameInformant.value + ' ' + contactNumber.value + ' ' + accountNumber.value;
+    cipher.encode(dataInformant, offsetInformant.value);
 })
 
 btnDecode.addEventListener('click', () => {
-    decode(nameBeneficiary.value, offsetDenounced.value);
+    cipher.decode(nameBeneficiary.value, offsetDenounced.value);
 })
-
