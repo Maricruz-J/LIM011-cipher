@@ -1,43 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
-    <link href="https://fonts.googleapis.com/css?family=Arvo|Bree+Serif|Maven+Pro|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Bree+Serif|Maven+Pro|Montserrat&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <header>
-        <h1>Cifrado Cesar</h1>
+        <img src="../images/logo_rec.png" alt="logo">
     </header>
-    <div class="content-informant">
-        <h2>Registro de Datos</h2>
-        <h3>Datos del Denunciante</h3>
-        <form>
-            <p>Nombres y apellidos: <input type="text" name="" id="name-informant"> </p>
-            <p>Número de contacto: <input type="number" name="" id="contact-number"> </p>
-            <p>Número de cuenta: <input type="number" name="" id="account-number"> </p>
-            <p>key: <input type="number" name="" id="offset-informant"> </p>
-            <input type="button" id="btn-encode" value="Encriptar">
-            <p>Datos a enviar</p>
-            <textarea name="" id="data-encode" cols="45" rows="5" readonly></textarea>
-        </form>
-    </div>
 
-    <div class="content-pay-order">
-        <h2>Orden de pago</h2>
-        <h3>Datos del Beneficiario</h3>
-        <form>
-            <p>Beneficiario: <input type="text" name="" id="name-beneficiary"> </p>
-            <p>key: <input type="number" name="" id="offset-denounced"> </p>
-            <input type="button" id="btn-decode" value="Desencriptar Datos">
-            <p>Datos obtenidos:</p>
-            <textarea name="" id="data-decode" cols="45" rows="10" readonly></textarea>
-        </form>
-    </div>
+    <main>
+        <div id="div-intro" class="div-intro">
+            <div class="abc">
+                <img src="../images/people.svg" alt="imagen-people">
+                <br>
+                <input type="button" id="btn-collaborator" value="CIUDADANO COLABORADOR">
+            </div>
+            <div class="abc">
+                <img src="../images/police.svg" alt="imagen-policia">
+                <br>
+                <input type="button" id="btn-police" value="POLICÍA NACIONAL DEL PERÚ">
+            </div>
+        </div>
 
+        <div id="div-list" class="div-list hidden">
+            <h2>Lista de prófugos</h2>
+            <div class="content-fugitive">
+                <div id="div-fugitive"> </div>
+            </div>
+        </div>
+
+        <div class="content-encode">
+            <div id="div-informant" class="div-informant hidden">
+                <form>
+                    <h3>Datos del Ciudadano Colaborador:</h3>
+                    <p>Nombres y apellidos: <input type="text" id="name-informant"> </p>
+                    <p>N° de cuenta BN: <input type="number" id="account-number"> </p>
+                    <p>key: <input type="number" id="offset-informant"> </p>
+                    <h3>Datos del Prófugo:</h3>
+                    <p id="p-name-fujitive"></p>
+                    <p id="p-crime">Delito:</p>
+                    <p>Ingrese Información:</p>
+                    <textarea id="" cols="45" rows="5"></textarea>
+                    <br>
+                    <input type="button" id="btn-encode" value="CIFRAR INFORMACIÓN">
+                </form>
+            </div>
+
+            <div id="div-encode" class="div-encode hidden">
+                <form>
+                    <h3>Datos del Ciudadano Colaborador:</h3>
+                    <p>Apellidos y Nombres:<span id="p-fullname-encode"> </span> </p>
+                    <p>N° de cuenta BN:<span id="p-account-encode"> </span></p>
+                    <h3>Datos del Prófugo:</h3>
+                    <p>Nombres y apellidos:</p>
+                    <p>Delito:</p>
+                    <p>Información sobre el prófugo:</p>
+                    <textarea id="data-encode" cols="45" rows="5" readonly></textarea>
+                    <br>
+                    <input type="button" id="btn-send-encode" value="ENVIAR INFORMACIÓN">
+                </form>
+            </div>
+        </div>
+
+        <div class="content-decode">
+            <div id="div-act" class="div-act hidden">
+                <h2>- Acta N° 369 -</h2>
+                <h3>Comisión Evaluadora de Recomensas</h3>
+                <img src="../images/report.png">;
+                <br>
+                <input type="button" id="btn-get-data" value="OBTENER DATOS DEL BENEFICIARIO">
+            </div>
+            <div id="div-decode" class="div-decode hidden">
+                <form>
+                    <h3>Datos del Beneficiario</h3>
+                    <p>Ingrese data cifrado: <input type="text" id="name-beneficiary"> </p>
+                    <p>Ingrese key:<input type="number" id="offset-denounced"> </p>
+                    <input type="button" id="btn-decode" value="DESENCRIPTAR DATOS">
+                    <h3>Datos Obtenidos</h3>
+                    <p>Nombres y Apellidos:</p>
+                    <p>N° de cuenta BN:</p>
+                    <textarea id="data-decode" cols="45" rows="5" readonly></textarea>
+                    <br>
+                    <input type="button" id="btn-send-payment" value="ENVIAR ORDEN DE PAGO">
+                </form>
+            </div>
+        </div>
+    </main>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
 </body>

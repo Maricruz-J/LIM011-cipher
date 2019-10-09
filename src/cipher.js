@@ -1,30 +1,35 @@
 let positionAscii;
 let positionAsciiChanged;
 let charPositionAsciiChanged;
-let newDataEncode = '';
-let newDataDecode = '';
 
+let newDataEncodeChar = '';
+let newDataEncodeNumber = '';
+let newDataDecode = '';
+let newDataEncode = '';
 window.cipher = {
     encode: (dataInformant, offsetInformant) => {
-        newDataEncode = '';
+        //newDataEncode = '';
         for (let i = 0; i < dataInformant.length; i++) {
             positionAscii = dataInformant.charCodeAt(i);
             if (positionAscii >= 65 && positionAscii <= 90) {
                 positionAsciiChanged = (positionAscii - 65 + parseInt(offsetInformant)) % 26 + 65;
                 charPositionAsciiChanged = String.fromCharCode(positionAsciiChanged);
-                newDataEncode += charPositionAsciiChanged;
+                newDataEncodeChar += charPositionAsciiChanged;
             } else if (positionAscii >= 97 && positionAscii <= 122) {
                 positionAsciiChanged = (positionAscii - 97 + parseInt(offsetInformant)) % 26 + 97;
                 charPositionAsciiChanged = String.fromCharCode(positionAsciiChanged);
-                newDataEncode += charPositionAsciiChanged;
+                newDataEncodeChar += charPositionAsciiChanged;
             } else if (positionAscii >= 48 && positionAscii <= 57) {
                 positionAsciiChanged = (positionAscii - 48 + parseInt(offsetInformant)) % 10 + 48;
                 charPositionAsciiChanged = String.fromCharCode(positionAsciiChanged);
-                newDataEncode += charPositionAsciiChanged;
+                newDataEncodeNumber += charPositionAsciiChanged;
             } else {
-                newDataEncode += String.fromCharCode(positionAscii);
+                newDataEncodeChar += String.fromCharCode(positionAscii);
             }
-            dataEncode.innerHTML = newDataEncode;
+            
+            pFullnameEncode.innerHTML= newDataEncodeChar;
+            pAccountEncode.innerHTML = newDataEncodeNumber;
+            //dataEncode.innerHTML = newDataEncodeNumber;
         }
     },
 
