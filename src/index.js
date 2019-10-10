@@ -16,6 +16,11 @@ const offsetInformant = document.getElementById('offset-informant');
 const offsetDenounced = document.getElementById('offset-denounced');
 const pNameFugitive = document.getElementById('p-name-fujitive');
 const pCrime = document.getElementById('p-crime');
+const pNameFugitiveEncode = document.getElementById('p-name-fujitive-encode');
+const pCrimeEncode = document.getElementById('p-crime-encode');
+const textReportEncode = document.getElementById('text-report-encode');
+const textReport = document.getElementById('text-report');
+
 const pFullnameEncode = document.getElementById('p-fullname-encode');
 const pAccountEncode = document.getElementById('p-account-encode');
 
@@ -25,47 +30,48 @@ const btnGetData = document.getElementById('btn-get-data');
 const btnSendPayment = document.getElementById('btn-send-payment');
 const btnDecode = document.getElementById('btn-decode');
 
-const dataEncode = document.getElementById('data-encode');
-const dataDecode = document.getElementById('data-decode');
+let encodeNameInformant;
+let encodeAccountInformant;
+let encodeReportInformant;
 
 var fugitives = [
     {
-        id: 01,
+        id: '01',
         photo: '../images/01.png',
         name: 'Juanito Perez',
         reward: 'S/ 10 000',
         crime: 'Apropiación Ilícita'
     },
     {
-        id: 02,
+        id: '02',
         photo: '../images/02.png',
         name: 'Luisa Delgado',
         reward: 'S/ 15 000',
         crime: 'Secuestro'
     },
     {
-        id: 03,
+        id: '03',
         photo: '../images/03.png',
         name: 'Juan Martinez',
         reward: 'S/ 15 000',
         crime: 'Lesiones Graves'
     },
     {
-        id: 04,
+        id: '04',
         photo: '../images/04.png',
         name: 'Marta Flores',
         reward: 'S/ 25 000',
         crime: 'Abuso de Autoridad'
     },
     {
-        id: 05,
+        id: '05',
         photo: '../images/05.png',
         name: 'Dante Garcia',
         reward: 'S/ 15 000',
         crime: 'Usurpación'
     },
     {
-        id: 06,
+        id: '06',
         photo: '../images/06.png',
         name: 'Emilia Suarez',
         reward: 'S/ 10 000',
@@ -105,7 +111,9 @@ btnCollaborator.addEventListener('click', () => {
             divList.classList.add('hidden');
             divInformant.classList.remove('hidden');
             pNameFugitive.innerHTML = 'Nombres y apellidos: ' + fugitive.name;
-            pCrime.innerHTML = 'Delito: ' +fugitive.crime;
+            pCrime.innerHTML = 'Delito: ' + fugitive.crime;
+            pNameFugitiveEncode.innerHTML = 'Nombres y apellidos: ' + fugitive.name;
+            pCrimeEncode.innerHTML = 'Delito: ' + fugitive.crime;
         })
     });
 })
@@ -113,11 +121,6 @@ btnCollaborator.addEventListener('click', () => {
 btnPolice.addEventListener('click', () => {
     divIntro.classList.add('hidden');
     divAct.classList.remove('hidden');
-})
-
-btnGetData.addEventListener('click', () => {
-    divAct.setAttribute('transition','all 25s');
-    divDecode.classList.remove('hidden');
 })
 
 btnSendPayment.addEventListener('click', () => {
@@ -135,12 +138,36 @@ btnSendEncode.addEventListener('click', () => {
 })
 
 btnEncode.addEventListener('click', () => {
+    textReportEncode.innerHTML = textReport.value;
+    btnEncode.disabled = true;
     divEncode.classList.remove('hidden');
-    const dataInformant = nameInformant.value + ' ' + accountNumber.value;
-    cipher.encode(dataInformant, offsetInformant.value);
+
+    encodeNameInformant = cipher.encode(nameInformant.value, offsetInformant.value);
+    encodeAccountInformant= cipher.encode(accountNumber.value, offsetInformant.value);
+    encodeReportInformant = cipher.encode(textReport.value, offsetInformant.value);
+
+    pFullnameEncode.innerHTML = encodeNameInformant;
+    pAccountEncode.innerHTML = encodeAccountInformant;
+    textReportEncode.innerHTML = encodeReportInformant;    
+})
+
+btnGetData.addEventListener('click', () => {
+
+    nameBeneficiary.value = encodeNameInformant;
+    
+    divDecode.classList.remove('hidden');
 })
 
 btnDecode.addEventListener('click', () => {
-    cipher.decode(nameBeneficiary.value, offsetDenounced.value);
+    btnDecode.disabled = true;
+    dataDecode = cipher.decode(nameBeneficiary.value, offsetDenounced.value);
+    for (let i = 0; i <= dataEncode.length; i++) {
+        positionAscii = dataEncode.charCodeAt(i);
+        if (positionAscii >= 48 && positionAscii <= 57) {
+            pAccountEncode.innerHTML += dataDecode[i];
+        } else {
+            pFullnameEncode.innerHTML += dataDecode[i];
+        }
+    }
 })
 

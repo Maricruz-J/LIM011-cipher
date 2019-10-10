@@ -46,7 +46,7 @@
                     <p id="p-name-fujitive"></p>
                     <p id="p-crime">Delito:</p>
                     <p>Ingrese Información:</p>
-                    <textarea id="" cols="45" rows="5"></textarea>
+                    <textarea id="text-report" cols="45" rows="5"></textarea>
                     <br>
                     <input type="button" id="btn-encode" value="CIFRAR INFORMACIÓN">
                 </form>
@@ -58,10 +58,10 @@
                     <p>Apellidos y Nombres:<span id="p-fullname-encode"> </span> </p>
                     <p>N° de cuenta BN:<span id="p-account-encode"> </span></p>
                     <h3>Datos del Prófugo:</h3>
-                    <p>Nombres y apellidos:</p>
-                    <p>Delito:</p>
+                    <p id="p-name-fujitive-encode" >Nombres y apellidos:</p>
+                    <p id="p-crime-encode" >Delito:</p>
                     <p>Información sobre el prófugo:</p>
-                    <textarea id="data-encode" cols="45" rows="5" readonly></textarea>
+                    <textarea id="text-report-encode" cols="45" rows="5" readonly></textarea>
                     <br>
                     <input type="button" id="btn-send-encode" value="ENVIAR INFORMACIÓN">
                 </form>
@@ -79,14 +79,15 @@
             <div id="div-decode" class="div-decode hidden">
                 <form>
                     <h3>Datos del Beneficiario</h3>
-                    <p>Ingrese data cifrado: <input type="text" id="name-beneficiary"> </p>
+                    <p>Nombre y Apellidos cifrado: <input type="text" id="name-beneficiary" readonly> </p>
+                    <p>Número de cuenta</p> <input type="text" id="account-beneficiary" >
                     <p>Ingrese key:<input type="number" id="offset-denounced"> </p>
                     <input type="button" id="btn-decode" value="DESENCRIPTAR DATOS">
                     <h3>Datos Obtenidos</h3>
-                    <p>Nombres y Apellidos:</p>
+                    <p>Nombres y Apellidos:</p> 
+                    <input type="text" id="text-name-decode">
                     <p>N° de cuenta BN:</p>
-                    <textarea id="data-decode" cols="45" rows="5" readonly></textarea>
-                    <br>
+                    <input type="text" id="" >
                     <input type="button" id="btn-send-payment" value="ENVIAR ORDEN DE PAGO">
                 </form>
             </div>
