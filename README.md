@@ -8,7 +8,7 @@ Hay denuncias de ambos lados, ya que hubieron personas que suplantaron la identi
 
 ## Sobre el proyecto
 
-Este proyecto consiste en cifrar información confidencial, donde a ello solo tendrán acceso personas autorizadas y que cuenten con una llave(Número) para desencriptar la información recibida. Resguardando así los datos del ciudadano colaborador.
+Este proyecto consiste en cifrar información confidencial, donde a ello solo tendrán acceso personas autorizadas y que cuenten con una llave(Número) para desencriptar la información recibida. Resguardando así los datos del ciudadano colaborador. Este proyecto fue realizado con HTML5, CSS3, VanillaJS, y Balsamiq como herramienta de prototipado.
 
 ## Imágenes del proyecto
 
