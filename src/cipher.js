@@ -1,11 +1,17 @@
-let positionAscii;
+/* let positionAscii;
+let positionAsciiChanged;
+let charPositionAsciiChanged;
+
+let newDataDecode = '';
+let newDataEncode = ''; */
+window.cipher = {
+    encode: (dataInformant, offsetInformant) => {
+        let positionAscii;
 let positionAsciiChanged;
 let charPositionAsciiChanged;
 
 let newDataDecode = '';
 let newDataEncode = '';
-window.cipher = {
-    encode: (dataInformant, offsetInformant) => {
         newDataEncode = '';
         for (let i = 0; i < dataInformant.length; i++) {
             positionAscii = dataInformant.charCodeAt(i);
@@ -29,7 +35,14 @@ window.cipher = {
     },
 
     decode: (name, offsetDenounced) => {
+        let positionAscii;
+let positionAsciiChanged;
+let charPositionAsciiChanged;
+
+let newDataDecode = '';
+let newDataEncode = '';
         newDataDecode = '';
+        
         for (let i = 0; i < name.length; i++) {
             positionAscii = name.charCodeAt(i);
             if (positionAscii >= 65 && positionAscii <= 90) {

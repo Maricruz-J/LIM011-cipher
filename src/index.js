@@ -20,6 +20,9 @@ const pNameFugitiveEncode = document.getElementById('p-name-fujitive-encode');
 const pCrimeEncode = document.getElementById('p-crime-encode');
 const textReportEncode = document.getElementById('text-report-encode');
 const textReport = document.getElementById('text-report');
+const textNameDecode = document.getElementById('text-name-decode');
+const textAccountDecode = document.getElementById('text-account-decode');
+const accountBeneficiary = document.getElementById('account-beneficiary');
 
 const pFullnameEncode = document.getElementById('p-fullname-encode');
 const pAccountEncode = document.getElementById('p-account-encode');
@@ -33,6 +36,8 @@ const btnDecode = document.getElementById('btn-decode');
 let encodeNameInformant;
 let encodeAccountInformant;
 let encodeReportInformant;
+let nameDecode;
+let accountDecode;
 
 var fugitives = [
     {
@@ -143,31 +148,26 @@ btnEncode.addEventListener('click', () => {
     divEncode.classList.remove('hidden');
 
     encodeNameInformant = cipher.encode(nameInformant.value, offsetInformant.value);
-    encodeAccountInformant= cipher.encode(accountNumber.value, offsetInformant.value);
+    encodeAccountInformant = cipher.encode(accountNumber.value, offsetInformant.value);
     encodeReportInformant = cipher.encode(textReport.value, offsetInformant.value);
 
-    pFullnameEncode.innerHTML = encodeNameInformant;
-    pAccountEncode.innerHTML = encodeAccountInformant;
-    textReportEncode.innerHTML = encodeReportInformant;    
+    pFullnameEncode.value = encodeNameInformant;
+    pAccountEncode.value = encodeAccountInformant;
+    textReportEncode.innerHTML = encodeReportInformant;
 })
 
 btnGetData.addEventListener('click', () => {
-
+    btnGetData.disabled = true;
     nameBeneficiary.value = encodeNameInformant;
-    
+    accountBeneficiary.value = encodeAccountInformant;
     divDecode.classList.remove('hidden');
 })
 
 btnDecode.addEventListener('click', () => {
     btnDecode.disabled = true;
-    dataDecode = cipher.decode(nameBeneficiary.value, offsetDenounced.value);
-    for (let i = 0; i <= dataEncode.length; i++) {
-        positionAscii = dataEncode.charCodeAt(i);
-        if (positionAscii >= 48 && positionAscii <= 57) {
-            pAccountEncode.innerHTML += dataDecode[i];
-        } else {
-            pFullnameEncode.innerHTML += dataDecode[i];
-        }
-    }
+    nameDecode = cipher.decode(encodeNameInformant, offsetDenounced.value);
+    accountDecode = cipher.decode(encodeAccountInformant, offsetDenounced.value);
+    textNameDecode.value = nameDecode;
+    textAccountDecode.value = accountDecode;
 })
 
