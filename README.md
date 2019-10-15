@@ -22,23 +22,23 @@ Este proyecto consiste en cifrar información confidencial, donde a ello solo te
 
 ## Investigación UX
 
-  ### ¿Quiénes son los usuarios y los objetivos en relación con el producto?
+### ¿Quiénes son los usuarios y los objetivos en relación con el producto?
 
-  El usuario es la policía, quienes se encargan de recepcionar las denuncias realizadas por cuidadanos que proporcionan información respecto al paradero de un prófugo.
+El usuario es la policía, quienes se encargan de recepcionar las denuncias realizadas por cuidadanos que proporcionan información respecto al paradero de un prófugo.
 
-  ### ¿Cómo el producto soluciona los problemas/necesidades de dichos usuarios?
+### ¿Cómo el producto soluciona los problemas/necesidades de dichos usuarios?
 
-  Cada cuidadano que proporciona información sobre el paradero de algún prófugo corre el riesgo de que alguien más se entere de su colaboración, estos datos del ciudadano colaborador (nombres, apellidos y número de cuenta bancaria) son recepcionados pero estos encriptados, excepto la información que proporciona sobre el prófugo, dando así lugar a que la policía realice las investigaciones pertinentes, y en caso la información haya sido relevante para la captura, estos datos pasan a la Comisión Evaluadora de Recompensas, quienes a través de un acta solicitan el pago al ciudadano colaborador, y la información es devuelta a la policía, más no el detalle del motivo del pago de recompensa.
+Cada cuidadano que proporciona información sobre el paradero de algún prófugo corre el riesgo de que alguien más se entere de su colaboración, estos datos del ciudadano colaborador (nombres, apellidos y número de cuenta bancaria) son recepcionados pero estos encriptados, excepto la información que proporciona sobre el prófugo, dando así lugar a que la policía realice las investigaciones pertinentes, y en caso la información haya sido relevante para la captura, estos datos pasan a la Comisión Evaluadora de Recompensas, quienes a través de un acta solicitan el pago al ciudadano colaborador, y la información es devuelta a la policía, más no el detalle del motivo del pago de recompensa.
 
-  ### Foto del primer prototipo en papel
+### Foto del primer prototipo en papel
 
-    ![Sketch](images/prototipoPapel.png)
+![Sketch](images/prototipoPapel.png)
 
-  ### Resumen del feedback recibido y las mejoras a realizar
+### Resumen del feedback recibido y las mejoras a realizar
 
-  Inicialmente no tenía muy claro las vistas, por lo que hice varias y al pedir feedback como que descarté algunas, quité campos que eran poco relevantes y añadí otros en base a las sugerencias y observaciones que obtuve.
+Inicialmente no tenía muy claro las vistas, por lo que hice varias y al pedir feedback como que descarté algunas, quité campos que eran poco relevantes y añadí otros en base a las sugerencias y observaciones que obtuve.
 
-  ### Imagen del prototipo final
+### Imagen del prototipo final
   
 ![PrototipoBalsamiq1](images/prototipoBalsamiq1.png)  
 ![PrototipoBalsamiq2](images/prototipoBalsamiq2.png)  
@@ -74,12 +74,15 @@ Este proyecto consiste en cifrar información confidencial, donde a ello solo te
 - [x] Declaración correcta de variables (const & let).
 ​
 ### Testing
+
 - [x] Testeo de tus funciones.
 ​
 ### Git y GitHub
+
 - [x] Comandos de git (add | commit | pull | status | push).
 - [x] Manejo de repositorios de GitHub (clone | fork | gh-pages).
 ​
 ### Buenas prácticas de desarrollo
+
 - [x] Uso de identificadores descriptivos (Nomenclatura | Semántica).
 - [x] Uso de linter para seguir buenas prácticas (ESLINT).
